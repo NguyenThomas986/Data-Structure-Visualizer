@@ -15,6 +15,9 @@
 * Worse Case Time Complexity: O(n)
 * Average Time Complexity: O(n)
 * Space Complexity: O(1)
+*
+* Last modified: 2/3/2026 Thomas Nguyen
+*
 */
 template <typename T>
 void LinkedList<T>::insert(T v) {
@@ -33,20 +36,22 @@ void LinkedList<T>::insert(T v) {
 
 
 /*
-@brief Retrieves the value at a specified index in the linked list.
-@tparam T Type of elements stored in the linked list.
-@param index The index of the element to retrieve.
-@returns The value at the specified index.
-
-Description:
-This function traverses the linked list to find and return the value
-at the given index. It assumes that the index is valid (0 <= index < size)
-
-Best Case Time Complexity: O(1) (if index is 0)
-Worse Case Time Complexity: O(n)
-Average Time Complexity: O(n)
-Space Complexity: O(1)
-
+* @brief Retrieves the value at a specified index in the linked list.
+* @tparam T Type of elements stored in the linked list.
+* @param index The index of the element to retrieve.
+* @returns The value at the specified index.
+* 
+* Description:
+* This function traverses the linked list to find and return the value
+* at the given index. It assumes that the index is valid (0 <= index < size)
+* 
+* Best Case Time Complexity: O(1) (if index is 0)
+* Worse Case Time Complexity: O(n)
+* Average Time Complexity: O(n)
+* Space Complexity: O(1)
+* 
+* Last modified: 2/3/2026 Thomas Nguyen
+* 
 */
 template <typename T>
 T LinkedList<T>::get(int index) {
@@ -58,20 +63,22 @@ T LinkedList<T>::get(int index) {
 }
 
 /*
-@brief Returns the current size of the linked list.
-@tparam T Type of elements stored in the linked list.
-@returns The number of elements in the linked list.
-
-Description:
-This function simply returns the size member variable,
-which keeps track of the number of elements in the linked list.
-
-Best Case Time Complexity: O(1)
-Worse Case Time Complexity: O(1)
-Average Time Complexity: O(1)
-Space Complexity: O(1)
-
-*/
+* @brief Returns the current size of the linked list.
+* @tparam T Type of elements stored in the linked list.
+* @returns The number of elements in the linked list.
+* 
+* Description:
+* This function simply returns the size member variable,
+* which keeps track of the number of elements in the linked list.
+* 
+* Best Case Time Complexity: O(1)
+* Worse Case Time Complexity: O(1)
+* Average Time Complexity: O(1)
+* Space Complexity: O(1)
+* 
+* Last modified: 2/3/2026 Thomas Nguyen
+*
+* */
 template <typename T>
 int LinkedList<T>::getSize() {
     return size;
