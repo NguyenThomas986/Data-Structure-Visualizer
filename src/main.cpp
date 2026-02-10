@@ -1,35 +1,29 @@
 #include <SFML/Graphics.hpp>
+#include "UI/Menu.hpp"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 600), "Button Test");
-    window.setFramerateLimit(60);
+	sf::RenderWindow window(sf::VideoMode{{200, 200}}, "Button Test");
 
-    // Load a font
-    sf::Font font;
-    if (!font.loadFromFile("Arial.ttf")) {
-        std::cout << "Failed to load font!\n";
-        return -1;
-    }
+	sf::Font font("UI/arial.ttf");
 
     // Create a button
     Button myButton({200, 60}, {300, 250}, "Click Me", font);
 
     while (window.isOpen())
     {
-        sf::Event event;
-        while (window.pollEvent(event))
+        while (const std::optional event = window.pollEvent())
         {
-            if (event.type == sf::Event::Closed)
+            if (event->is<sf::Event::Closed>())
                 window.close();
 
             // Handle button click
-            myButton.handleEvent(event, window);
+            // myButton.update(window);
 
-            if (myButton.isClicked()) {
-                std::cout << "Button clicked!\n";
-                myButton.resetClick(); // reset for next click
-            }
+            // if (myButton.isClicked()) {
+            //     std::cout << "Button clicked!\n";
+            //     myButton.resetClick(); // reset for next click
+            // }
         }
 
         // Update hover effect

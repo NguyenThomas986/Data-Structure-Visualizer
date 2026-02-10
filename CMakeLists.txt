@@ -12,8 +12,23 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(main src/main.cpp)
-target_compile_features(main PRIVATE cxx_std_17)
-target_link_libraries(main PRIVATE SFML::Graphics)
+include_directories(src)
 
-set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT main)
+add_executable(DataStructureVisualizer 
+              src/main.cpp
+              src/UI/Menu.cpp
+              src/UI/Button.cpp)
+
+add_custom_command(
+    TARGET DataStructureVisualizer POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_SOURCE_DIR}/src/UI/Fonts
+            $<TARGET_FILE_DIR:DataStructureVisualizer>/UI/Fonts
+)
+
+
+
+target_compile_features(DataStructureVisualizer PRIVATE cxx_std_17)
+target_link_libraries(DataStructureVisualizer PRIVATE SFML::Graphics)
+
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT DataStructureVisualizer)

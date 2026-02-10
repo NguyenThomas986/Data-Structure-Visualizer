@@ -6,15 +6,9 @@
 class Menu
 {
 private:
+    sf::Font& font;
+    std::vector<Button> buttons;
 public:
-    Menu();
+    Menu(sf::Font& font);
     ~Menu();
 };
-
-Menu::Menu(/* args */)
-{
-}
-
-Menu::~Menu()
-{
-}
